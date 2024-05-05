@@ -29,3 +29,4 @@ Learn how to deploy LLM models in local computer
 
 Thanks for the teaching, reaceived from Matt Williams
 https://www.youtube.com/watch?v=_4K20tOsXK8
+https://github.com/technovangelist/videoprojects/tree/main/2024-04-01-intro-dev-python
