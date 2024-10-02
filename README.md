@@ -7,6 +7,7 @@ Learn how to deploy LLM models in local computer
     https://ollama.com/download
 
 ###### Install Ollama CLI
+    # double click to install
 
 ###### Check list of available models
     https://ollama.com/library
@@ -30,3 +31,19 @@ Learn how to deploy LLM models in local computer
 Thanks for the teaching, reaceived from Matt Williams
 https://www.youtube.com/watch?v=_4K20tOsXK8
 https://github.com/technovangelist/videoprojects/tree/main/2024-04-01-intro-dev-python
+
+# https://hub.docker.com/r/ollama/ollama
+docker pull ollama/ollama
+docker run --rm -d --name ollama-container -p 11434:11434/tcp ollama/ollama:latest 
+docker logs -f --tail 100 ollama-container
+http://localhost:11434/
+docker exec -it ollama-container /bin/bash
+docker exec -it ollama-container printenv
+docker inspect ollama-container
+
+
+
+
+curl -X POST http://localhost:11434/api/pull -d '{"name": "llama2"}' -H "Content-Type: application/json"
+
+curl -X POST http://localhost:11434/api/generate -d '{"model": "llama2", "prompt": "What is AI?"}' -H "Content-Type: application/json"
