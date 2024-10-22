@@ -41,9 +41,15 @@ docker exec -it ollama-container /bin/bash
 docker exec -it ollama-container printenv
 docker inspect ollama-container
 
-
-
-
 curl -X POST http://localhost:11434/api/pull -d '{"name": "llama2"}' -H "Content-Type: application/json"
-
 curl -X POST http://localhost:11434/api/generate -d '{"model": "llama2", "prompt": "What is AI?"}' -H "Content-Type: application/json"
+
+# Host gguf model through ollama
+create a file Modelfile
+Add a line into Medelfile as
+    FROM path/merlinite-7b-lab-Q4_K_M.gguf
+Execute command
+    ollama create <mygguf> -f Modelfile
+    ollama list 
+Use the <mygguf> model for inferencing
+
