@@ -1,7 +1,7 @@
 from ollama import Client
 
 client = Client(host="http://localhost:11434")
-MODEL = 'deepseek-r1:8b'  # 'llama3.2:1b'
+MODEL = 'granite3.2-vision:latest' #'deepseek-r1:8b'  # 'llama3.2:1b' 
 
 def pull_model():
   response = client.pull(model=MODEL, stream=True)
